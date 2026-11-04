@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZZZC_BHRAPN_DT_CUST'
+@MappingRole: true
+define role ZZZC_BHRAPN_DT_CUST {
+  grant select on ZZZC_BHRAPN_DT_CUST
+  where INHERITING CONDITIONS FROM ENTITY ZZZR_BHRAPN_DT_CUST REPLACING { ROOT WITH _BaseEntity };
+}

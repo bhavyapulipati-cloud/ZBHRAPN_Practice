@@ -1,0 +1,50 @@
+managed implementation in class ZZZBP_R_BHRAPN_DT_CUST unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZZZR_BHRAPN_DT_CUST alias ZzzrBhrapnDtCust
+persistent table ZBHRAPN_DT_CUST
+extensible
+draft table ZZZBHRPN_DT_CS_D
+etag master Lastchangedtimestmp
+lock master total etag Lastchangedtimestmp
+authorization master( global )
+{
+  field ( mandatory : create )
+   CustID;
+
+  field ( readonly )
+   Lastchangedtimestmp,
+   Creationtimestmp,
+   Lastchangeduser,
+   Creationuser;
+
+  field ( readonly : update )
+   CustID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZBHRAPN_DT_CUST corresponding extensible
+  {
+    CustID = CUST_ID;
+    Name = NAME;
+    CompName = COMP_NAME;
+    Cntry = CNTRY;
+    City = CITY;
+    Mobile = MOBILE;
+    Lastchangedtimestmp = LASTCHANGEDTIMESTMP;
+    Creationtimestmp = CREATIONTIMESTMP;
+    Lastchangeduser = LASTCHANGEDUSER;
+    Creationuser = CREATIONUSER;
+  }
+
+}

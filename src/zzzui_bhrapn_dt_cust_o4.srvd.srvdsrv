@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZZZC_BHRAPN_DT_CUST'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZZZC_BHRAPN_DT_CUST'
+  }
+}
+define service ZZZUI_BHRAPN_DT_CUST_O4 provider contracts odata_v4_ui {
+  expose ZZZC_BHRAPN_DT_CUST;
+}
