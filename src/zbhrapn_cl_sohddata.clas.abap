@@ -11,7 +11,9 @@ ENDCLASS.
 
 
 
-CLASS zbhrapn_cl_sohddata IMPLEMENTATION.
+CLASS ZBHRAPN_CL_SOHDDATA IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA : lt_sohd TYPE TABLE OF zbhrapn_dt_sohd.
     TRY.
@@ -44,5 +46,4 @@ CLASS zbhrapn_cl_sohddata IMPLEMENTATION.
         "handle exception
     ENDTRY.
   ENDMETHOD.
-
 ENDCLASS.
